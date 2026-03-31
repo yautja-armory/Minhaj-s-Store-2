@@ -1,0 +1,468 @@
+/* --- 1. Global Styles & Typography --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Assistant', sans-serif; /* Shopify Dawn Font */
+}
+
+body.dark-theme {
+    background-color: #1a1a1a; /* Dark Grey Background */
+    color: #e0e0e0;           /* Light text */
+    line-height: 1.6;
+    overflow-x: hidden; /* For drawer slide animation */
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* --- 2. Navbar Styling (Black) --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background: #121212; /* Nearly Black */
+    border-bottom: 1px solid #333;
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Stays above everything */
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links li a {
+    font-size: 14px;
+    color: #ccc;
+    transition: 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #fff;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+.nav-icons {
+    display: flex;
+    gap: 20px;
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.nav-icons span {
+    transition: 0.3s;
+}
+
+.nav-icons span:hover {
+    color: #aaa;
+}
+
+/* --- 3. Hero Section (Slightly lighter grey) --- */
+.hero {
+    height: 70vh;
+    background-color: #242424; /* Darker than body */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.hero-content p {
+    font-size: 18px;
+    color: #ccc;
+    margin-bottom: 25px;
+}
+
+/* --- 4. Product Section & Grid --- */
+.products {
+    padding: 60px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.products h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 400;
+    font-size: 28px;
+    color: #fff;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background-color: #242424; /* Dark grey card */
+    padding: 15px;
+    border: 1px solid #333;
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    border-color: #555;
+    background-color: #2a2a2a;
+}
+
+.product-image {
+    background-color: #333; /* Image placeholder */
+    height: 300px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.product-card h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #fff;
+}
+
+.product-card p {
+    font-size: 14px;
+    color: #aaa;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* --- 5. Button Styling --- */
+.btn {
+    padding: 12px 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.3s ease;
+    font-weight: 600;
+}
+
+.btn-white {
+    background-color: #fff;
+    color: #121212;
+}
+
+.btn-white:hover {
+    background-color: #ccc;
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    width: 100%; /* Spans across the product card */
+}
+
+.btn-outline:hover {
+    background-color: #444;
+}
+
+/* --- 6. Cart Drawer Styling (Right Side) --- */
+
+/* Background Overlay */
+.cart-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: none; /* Hidden by default */
+    z-index: 1999; /* Below the drawer */
+}
+
+/* Actual Drawer Panel */
+.cart-drawer {
+    position: fixed;
+    top: 0;
+    right: -400px; /* Initially hidden off-screen */
+    width: 350px;
+    height: 100%;
+    background: #1a1a1a; /* Dark Grey */
+    border-left: 1px solid #333;
+    transition: 0.4s ease-in-out; /* Smooth slide animation */
+    z-index: 2000; /* Above everything */
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    color: white;
+}
+
+/* This class is added by JS to open the cart */
+.cart-drawer.active {
+    right: 0;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #333;
+    padding-bottom: 15px;
+}
+
+.close-cart-btn {
+    cursor: pointer;
+    font-size: 28px;
+    color: #fff;
+}
+
+.cart-items {
+    flex: 1; /* Pushes the footer down */
+    overflow-y: auto; /* Scroll if many items */
+    padding: 20px 0;
+}
+
+.empty-cart-msg {
+    text-align: center;
+    color: #888;
+    margin-top: 50px;
+    font-style: italic;
+}
+
+.cart-footer {
+    border-top: 1px solid #333;
+    padding-top: 20px;
+}
+
+.subtotal {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.checkout-btn {
+    width: 100%;
+    font-size: 16px;
+}
+/* --- Checkout Page Styles --- */
+.checkout-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 5%;
+}
+
+.checkout-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 50px;
+}
+
+.checkout-form h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.full-width {
+    width: 100% !important;
+    max-width: none !important;
+    margin-bottom: 15px;
+}
+
+.input-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.input-row .dark-input {
+    flex: 1;
+    max-width: none;
+}
+
+.payment-box {
+    border: 1px solid #444;
+    padding: 20px;
+    background: #242424;
+    border-radius: 4px;
+}
+
+.order-summary {
+    background: #242424;
+    padding: 30px;
+    border-radius: 4px;
+    height: fit-content;
+}
+
+.summary-total .row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.summary-total .total {
+    border-top: 1px solid #444;
+    padding-top: 15px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .checkout-layout { grid-template-columns: 1fr; }
+    .order-summary { order: -1; } /* Summary shows first on mobile */
+}
+.footer {
+    background-color: #121212;
+    color: #888;
+    padding: 60px 5% 20px 5%;
+    border-top: 1px solid #333;
+    margin-top: 80px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; /* Ye line Contact ko Left aur Links ko Right karegi */
+    align-items: flex-start;
+    flex-wrap: wrap; /* Mobile par ek ke niche ek aane ke liye */
+    gap: 40px;
+}
+
+/* Contact Section (Left) */
+.footer-left h3, .footer-right h3 {
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-left p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.footer-left a:hover {
+    color: #fff;
+}
+
+/* Policies Section (Right) */
+.footer-right ul {
+    list-style: none;
+    text-align: right; /* Links ko right-align karne ke liye */
+}
+
+.footer-right ul li {
+    margin-bottom: 10px;
+}
+
+.footer-right ul li a {
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.footer-right ul li a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Bottom Copyright Bar */
+.footer-bottom {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #222;
+    text-align: center;
+    font-size: 12px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-right ul {
+        text-align: center;
+    }
+}
+/* --- Success Page Styles --- */
+.success-container {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 5%;
+}
+
+.success-card {
+    background: #242424;
+    padding: 50px;
+    border-radius: 4px;
+    border: 1px solid #333;
+    max-width: 600px;
+}
+
+.success-icon {
+    width: 80px;
+    height: 80px;
+    background: #fff;
+    color: #121212;
+    font-size: 40px;
+    line-height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 25px auto;
+}
+
+.success-card h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.success-card p {
+    color: #ccc;
+    margin-bottom: 10px;
+}
+
+.success-card .sub-text {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 30px;
+}
+
+.success-actions {
+    border-top: 1px solid #333;
+    padding-top: 30px;
+}
+.product-image {
+    height: 350px; /* Sab images ki height barabar rakhega */
+    overflow: hidden;
+    background-color: #242424;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Image ko bina khinche box mein fit karega */
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.1); /* 10% zoom on hover */
+}

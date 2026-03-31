@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Premium Store | Dark Grey Theme</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body class="dark-theme">
+
+    <nav class="navbar">
+        <div class="logo">MY STORE</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#catalog">Catalog</a></li>
+        </ul>
+        <div class="nav-icons">
+            <span id="cart-icon-btn">🛒</span>
+        </div>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <h1>New Arrivals</h1>
+            <p>Premium quality essentials for your wardrobe.</p>
+            <button class="btn btn-white">Shop Now</button>
+        </div>
+    </header>
+
+    <section id="catalog" class="products">
+        <h2>Featured Products</h2>
+        <div class="product-grid">
+            
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500" alt="T-Shirt">
+                </div>
+                <h3>Classic T-Shirt</h3>
+                <p>Rs. 1,500</p>
+                <button class="btn btn-outline add-to-cart-btn" 
+                        data-name="Classic T-Shirt" 
+                        data-price="1500" 
+                        data-image="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500">
+                    Add to Cart
+                </button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=500" alt="Hoodie">
+                </div>
+                <h3>Cotton Hoodie</h3>
+                <p>Rs. 3,500</p>
+                <button class="btn btn-outline add-to-cart-btn" 
+                        data-name="Cotton Hoodie" 
+                        data-price="3500" 
+                        data-image="https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=500">
+                    Add to Cart
+                </button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500" alt="Shoes">
+                </div>
+                <h3>Sport Shoes</h3>
+                <p>Rs. 5,500</p>
+                <button class="btn btn-outline add-to-cart-btn" 
+                        data-name="Sport Shoes" 
+                        data-price="5500" 
+                        data-image="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500">
+                    Add to Cart
+                </button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=500" alt="Cap">
+                </div>
+                <h3>Baseball Cap</h3>
+                <p>Rs. 1,200</p>
+                <button class="btn btn-outline add-to-cart-btn" 
+                        data-name="Baseball Cap" 
+                        data-price="1200" 
+                        data-image="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=500">
+                    Add to Cart
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <h3>Contact Us</h3>
+                <p>Email: <a href="mailto:support@mystore.com">support@mystore.com</a></p>
+                <p>Phone: +92 300 1234567</p>
+            </div>
+            <div class="footer-right">
+                <h3>Policies</h3>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Refund Policy</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <div id="cart-overlay" class="cart-overlay"></div>
+    <div id="cart-drawer" class="cart-drawer">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <span id="close-cart" class="close-cart-btn">&times;</span>
+        </div>
+        <div class="cart-items">
+            <p class="empty-cart-msg">Your cart is currently empty.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="subtotal">
+                <span>Subtotal</span>
+                <span>Rs. 0</span>
+            </div>
+            <button class="btn btn-white checkout-btn" onclick="window.location.href='checkout.html'">Checkout</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classic T-Shirt - My Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body class="dark-theme">
+
+    <nav class="navbar">
+        <div class="logo"><a href="index.html">MY STORE</a></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#catalog">Catalog</a></li>
+        </ul>
+        <div class="nav-icons">
+            <span id="cart-icon-btn">🛒</span>
+        </div>
+    </nav>
+
+    <main class="product-container">
+        <div class="product-layout">
+            
+            <div class="product-main-image">
+    <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=80" alt="Main Product" style="width:100%; height:auto; border: 1px solid #333;">
+</div>
+                <div class="img-placeholder">
+                    <span style="color: #555;">Product Image</span>
+                </div>
+            </div>
+
+            <div class="product-info">
+                <p class="brand-name">PREMIUM COLLECTION</p>
+                <h1>Classic Cotton T-Shirt</h1>
+                <p class="price">Rs. 1,500.00</p>
+                
+                <div class="selector-group">
+                    <label>Size</label>
+                    <select class="dark-input">
+                        <option>Small</option>
+                        <option>Medium</option>
+                        <option>Large</option>
+                        <option>XL</option>
+                    </select>
+                </div>
+
+                <div class="selector-group">
+                    <label>Quantity</label>
+                    <input type="number" class="dark-input" value="1" min="1">
+                </div>
+
+                <button class="btn btn-outline add-to-cart-btn" style="margin-bottom: 10px;">Add to Cart</button>
+                <button class="btn btn-white" style="width: 100%;">Buy it now</button>
+
+                <div class="product-description">
+                    <h3>Description</h3>
+                    <p>Experience ultimate comfort with our 100% organic cotton t-shirt. Featuring a tailored fit and breathable fabric, it's perfect for any occasion.</p>
+                    <ul>
+                        <li>100% Organic Cotton</li>
+                        <li>Breathable Fabric</li>
+                        <li>Machine Washable</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="cart-overlay" class="cart-overlay"></div>
+
+    <div id="cart-drawer" class="cart-drawer">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <span id="close-cart" class="close-cart-btn">&times;</span>
+        </div>
+        <div class="cart-items">
+            <p class="empty-cart-msg">Your cart is currently empty.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="subtotal">
+                <span>Subtotal</span>
+                <span>Rs. 0.00</span>
+            </div>
+            <button class="btn btn-white checkout-btn">Checkout</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
